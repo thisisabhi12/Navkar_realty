@@ -14,7 +14,7 @@ import {
   Twitter
 } from 'lucide-react';
 
-export default function Footer({ onOpenConsultation }) {
+export default function Footer({ onOpenConsultation, onOpenLegal }) {
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
@@ -246,11 +246,29 @@ export default function Footer({ onOpenConsultation }) {
               © {new Date().getFullYear()} Navkar Realty (A Part of VS Group). All Rights Reserved.
             </p>
             <p className="flex items-center space-x-4">
-              <span className="hover:text-white cursor-pointer">Privacy Policy</span>
+              <button 
+                type="button"
+                onClick={() => onOpenLegal && onOpenLegal('privacy')}
+                className="hover:text-white transition-colors underline-offset-4 hover:underline"
+              >
+                Privacy Policy
+              </button>
               <span>•</span>
-              <span className="hover:text-white cursor-pointer">Terms of Service</span>
+              <button 
+                type="button"
+                onClick={() => onOpenLegal && onOpenLegal('terms')}
+                className="hover:text-white transition-colors underline-offset-4 hover:underline"
+              >
+                Terms of Service
+              </button>
               <span>•</span>
-              <span className="hover:text-white cursor-pointer">RERA Compliance</span>
+              <button
+                type="button"
+                onClick={() => onOpenLegal && onOpenLegal('terms')}
+                className="hover:text-white transition-colors underline-offset-4 hover:underline"
+              >
+                RERA Compliance
+              </button>
             </p>
           </div>
         </div>

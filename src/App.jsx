@@ -11,10 +11,13 @@ import Footer from './components/Footer';
 import FloatingWhatsApp from './components/FloatingWhatsApp';
 import PropertyModal from './components/PropertyModal';
 import ConsultationModal from './components/ConsultationModal';
+import LegalModal from './components/LegalModal';
+
 export default function App() {
   const [searchFilters, setSearchFilters] = useState(null);
   const [selectedPropertyId, setSelectedPropertyId] = useState(null);
   const [isConsultationOpen, setIsConsultationOpen] = useState(false);
+  const [legalModal, setLegalModal] = useState({ isOpen: false, tab: 'privacy' });
 
   // Ensure any legacy theme storage is cleaned and unified Lacoste theme is applied
   useEffect(() => {
@@ -41,6 +44,14 @@ export default function App() {
 
   const handleCloseConsultation = () => {
     setIsConsultationOpen(false);
+  };
+
+  const handleOpenLegal = (tab = 'privacy') => {
+    setLegalModal({ isOpen: true, tab });
+  };
+
+  const handleCloseLegal = () => {
+    setLegalModal(prev => ({ ...prev, isOpen: false }));
   };
 
   return (
@@ -76,11 +87,14 @@ export default function App() {
         <Testimonials />
 
         {/* 7. Lead Capture Form & Office Details */}
-        <LeadCapture />
+        <LeadCapture onOpenLegal={handleOpenLegal} />
       </main>
 
       {/* 8. Corporate Footer */}
-      <Footer onOpenConsultation={handleOpenConsultation} />
+      <Footer 
+        onOpenConsultation={handleOpenConsultation} 
+        onOpenLegal={handleOpenLegal}
+      />
 
       {/* 9. Floating WhatsApp Quick Connect Button */}
       <FloatingWhatsApp />
@@ -96,6 +110,13 @@ export default function App() {
       <ConsultationModal 
         isOpen={isConsultationOpen} 
         onClose={handleCloseConsultation} 
+      />
+
+      {/* 12. Legal Documentation Modal (Privacy Policy & Terms of Service) */}
+      <LegalModal 
+        isOpen={legalModal.isOpen} 
+        initialTab={legalModal.tab} 
+        onClose={handleCloseLegal} 
       />
     </div>
   );

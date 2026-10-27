@@ -6,7 +6,6 @@ import {
   BadgeIndianRupee, 
   ArrowRight, 
   ShieldCheck, 
-  Building, 
   Sparkles,
   ChevronRight,
   CheckCircle2,
@@ -266,17 +265,6 @@ export default function Hero({ onSearchSubmit, onSelectProperty }) {
                 </button>
               </div>
 
-            </div>
-
-            {/* Floating Trust Indicator Card */}
-            <div className="absolute -bottom-6 -left-6 hidden sm:flex items-center space-x-3 bg-white p-4 rounded-2xl shadow-xl border border-[#DCE5DD] transition-colors">
-              <div className="w-12 h-12 rounded-xl bg-brand-50 flex items-center justify-center text-brand-700 flex-shrink-0">
-                <Building className="w-6 h-6" />
-              </div>
-              <div>
-                <p className="text-sm font-extrabold text-[#202923]">207, Vihav Supremus 2</p>
-                <p className="text-xs text-[#66716A]">Headquarters in Vasna Road, Vadodara</p>
-              </div>
             </div>
 
           </div>

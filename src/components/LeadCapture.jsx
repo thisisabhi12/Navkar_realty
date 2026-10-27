@@ -14,7 +14,7 @@ import {
 } from 'lucide-react';
 import { VADODARA_LOCALITIES } from '../data/properties';
 
-export default function LeadCapture() {
+export default function LeadCapture({ onOpenLegal }) {
   const [formData, setFormData] = useState({
     fullName: '',
     phone: '',
@@ -257,7 +257,26 @@ export default function LeadCapture() {
                   </button>
                 </div>
 
-                <div className="text-center pt-1">
+                <div className="text-center pt-2 space-y-1.5">
+                  <p className="text-[11px] text-[#66716A] leading-tight">
+                    By submitting, you agree to our{' '}
+                    <button
+                      type="button"
+                      onClick={() => onOpenLegal && onOpenLegal('terms')}
+                      className="text-[#176B3A] font-semibold underline hover:text-[#104D2A]"
+                    >
+                      Terms of Service
+                    </button>
+                    {' '}and acknowledge our{' '}
+                    <button
+                      type="button"
+                      onClick={() => onOpenLegal && onOpenLegal('privacy')}
+                      className="text-[#176B3A] font-semibold underline hover:text-[#104D2A]"
+                    >
+                      Privacy Policy
+                    </button>
+                    .
+                  </p>
                   <span className="text-[11px] text-[#66716A] flex items-center justify-center">
                     <ShieldCheck className="w-3.5 h-3.5 mr-1 text-[#176B3A]" />
                     Backed by the ethics and transparency of the VS Group
