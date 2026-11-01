@@ -62,15 +62,15 @@ export default function App() {
       {/* Main Page Flow */}
       <main className="flex-1">
         {/* 2. Split-screen Hero Section */}
-        <Hero 
-          onSearchSubmit={handleHeroSearch} 
-          onSelectProperty={handleSelectProperty} 
+        <Hero
+          onSearchSubmit={handleHeroSearch}
+          onSelectProperty={handleSelectProperty}
         />
 
         {/* 3. Featured Property Listings with Live Interactive Filters */}
-        <FeaturedListings 
-          searchFilters={searchFilters} 
-          onSelectProperty={handleSelectProperty} 
+        <FeaturedListings
+          searchFilters={searchFilters}
+          onSelectProperty={handleSelectProperty}
           onOpenConsultation={handleOpenConsultation}
         />
 
@@ -91,8 +91,8 @@ export default function App() {
       </main>
 
       {/* 8. Corporate Footer */}
-      <Footer 
-        onOpenConsultation={handleOpenConsultation} 
+      <Footer
+        onOpenConsultation={handleOpenConsultation}
         onOpenLegal={handleOpenLegal}
       />
 
@@ -100,23 +100,23 @@ export default function App() {
       <FloatingWhatsApp />
 
       {/* 10. Property Details Modal */}
-      <PropertyModal 
-        propertyId={selectedPropertyId} 
-        onClose={handleClosePropertyModal} 
+      <PropertyModal
+        propertyId={selectedPropertyId}
+        onClose={handleClosePropertyModal}
         onOpenConsultation={handleOpenConsultation}
       />
 
       {/* 11. Consultation Booking Modal */}
-      <ConsultationModal 
-        isOpen={isConsultationOpen} 
-        onClose={handleCloseConsultation} 
+      <ConsultationModal
+        isOpen={isConsultationOpen}
+        onClose={handleCloseConsultation}
       />
 
       {/* 12. Legal Documentation Modal (Privacy Policy & Terms of Service) */}
-      <LegalModal 
-        isOpen={legalModal.isOpen} 
-        initialTab={legalModal.tab} 
-        onClose={handleCloseLegal} 
+      <LegalModal
+        isOpen={legalModal.isOpen}
+        initialTab={legalModal.tab}
+        onClose={handleCloseLegal}
       />
     </div>
   );

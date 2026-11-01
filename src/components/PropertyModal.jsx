@@ -12,7 +12,8 @@ import {
   PhoneCall, 
   Calendar,
   Share2,
-  Sparkles
+  Sparkles,
+  ExternalLink
 } from 'lucide-react';
 import { PROPERTIES_DATA } from '../data/properties';
 
@@ -124,15 +125,32 @@ export default function PropertyModal({ propertyId, onClose, onOpenConsultation 
           
           {/* Main Gallery Display */}
           <div className="space-y-3">
-            <div className="relative aspect-[16/9] w-full rounded-2xl overflow-hidden bg-slate-100 shadow-md">
+            <div className="relative aspect-[16/9] w-full rounded-2xl overflow-hidden bg-slate-950 shadow-md">
               <img
                 src={property.gallery[selectedImageIndex] || property.mainImage}
                 alt={`${property.title} view ${selectedImageIndex + 1}`}
-                className="w-full h-full object-cover transition-all duration-300"
+                className={`w-full h-full transition-all duration-300 ${
+                  (property.gallery[selectedImageIndex] || property.mainImage).match(/seven-(imperia|symphony|sattva|sky|sky-villa)\.jpg/)
+                    ? 'object-contain'
+                    : 'object-cover'
+                }`}
               />
               <div className="absolute top-3 left-3 bg-[#104D2A]/90 text-white text-xs font-bold px-3 py-1 rounded-md shadow">
                 {property.badge}
               </div>
+
+              <div className="absolute top-3 right-3 flex items-center space-x-2">
+                <a
+                  href={property.gallery[selectedImageIndex] || property.mainImage}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="bg-black/70 hover:bg-black/90 backdrop-blur-sm text-white text-xs font-semibold px-2.5 py-1 rounded-md flex items-center space-x-1 transition-colors shadow"
+                >
+                  <ExternalLink className="w-3 h-3" />
+                  <span>Full View</span>
+                </a>
+              </div>
+
               <div className="absolute bottom-3 right-3 bg-black/60 backdrop-blur-sm text-white text-xs px-3 py-1 rounded-full">
                 Image {selectedImageIndex + 1} of {property.gallery.length}
               </div>
@@ -191,7 +209,7 @@ export default function PropertyModal({ propertyId, onClose, onOpenConsultation 
               <span className="text-[11px] font-bold text-[#66716A] uppercase tracking-wider block">Configuration</span>
               <p className="text-sm font-extrabold text-[#202923] mt-0.5 flex items-center">
                 <Bed className="w-4 h-4 mr-1.5 text-[#176B3A]" />
-                {property.bhk > 0 ? `${property.bhk} BHK` : 'Commercial'}
+                {property.bhk > 0 ? (property.bhkDisplay || `${property.bhk} BHK`) : 'Commercial'}
               </p>
             </div>
 

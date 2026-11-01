@@ -11,13 +11,15 @@ import {
   CheckCircle2,
   KeyRound
 } from 'lucide-react';
-import { VADODARA_LOCALITIES, PROPERTY_TYPES, BUDGET_RANGES } from '../data/properties';
+import { VADODARA_LOCALITIES, PROPERTY_TYPES, BUDGET_RANGES, PROPERTIES_DATA } from '../data/properties';
 
 export default function Hero({ onSearchSubmit, onSelectProperty }) {
   const [activeTab, setActiveTab] = useState('buy'); // 'buy', 'rent', 'commercial', 'villa'
   const [selectedLocation, setSelectedLocation] = useState('All Locations');
   const [selectedType, setSelectedType] = useState('All Types');
   const [selectedBudgetIndex, setSelectedBudgetIndex] = useState(0);
+
+  const spotlight = PROPERTIES_DATA[0];
 
   const handleSearch = (e) => {
     e.preventDefault();
@@ -195,8 +197,8 @@ export default function Hero({ onSearchSubmit, onSelectProperty }) {
             {/* Main Visual Image Card with Glassmorphism Overlay */}
             <div className="relative rounded-3xl overflow-hidden shadow-2xl border-4 border-white group">
               <img
-                src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80"
-                alt="Navkar Realty Premium Real Estate Project in Vasna Road, Vadodara"
+                src={spotlight.mainImage}
+                alt={`${spotlight.title} in ${spotlight.location}, Vadodara`}
                 className="w-full h-[450px] sm:h-[500px] object-cover object-center group-hover:scale-105 transition-transform duration-700"
                 loading="eager"
               />
@@ -208,10 +210,10 @@ export default function Hero({ onSearchSubmit, onSelectProperty }) {
               <div className="absolute top-4 left-4 flex flex-wrap gap-2">
                 <span className="bg-brand-700/90 backdrop-blur-md text-white text-xs font-bold px-3 py-1.5 rounded-full flex items-center shadow-md">
                   <Sparkles className="w-3.5 h-3.5 mr-1 text-brand-100" />
-                  Spotlight Listing
+                  {spotlight.badge || 'Spotlight Listing'}
                 </span>
                 <span className="bg-white/95 backdrop-blur-md text-[#202923] text-xs font-semibold px-3 py-1.5 rounded-full shadow-md">
-                  Vasna Road, Vadodara
+                  {spotlight.location}, Vadodara
                 </span>
               </div>
 
@@ -223,17 +225,17 @@ export default function Hero({ onSearchSubmit, onSelectProperty }) {
                       VS Group Featured Collection
                     </span>
                     <h3 className="text-lg sm:text-xl font-extrabold text-[#202923] mt-0.5 font-display">
-                      Supremus Grandeur Residency
+                      {spotlight.title}
                     </h3>
                     <p className="text-xs text-[#66716A] flex items-center mt-1">
                       <MapPin className="w-3.5 h-3.5 text-brand-700 mr-1" />
-                      Vasna Road, Near Ward No 11, Vadodara
+                      {spotlight.location}, Vadodara
                     </p>
                   </div>
                   <div className="text-right">
                     <span className="text-xs text-[#66716A] font-medium block">Starting from</span>
                     <span className="text-lg sm:text-xl font-black text-brand-700 font-display">
-                      ₹98 Lakhs
+                      {spotlight.priceDisplay}
                     </span>
                   </div>
                 </div>
@@ -241,26 +243,26 @@ export default function Hero({ onSearchSubmit, onSelectProperty }) {
                 {/* Mini specs */}
                 <div className="grid grid-cols-3 gap-2 mt-3 pt-3 border-t border-[#DCE5DD] text-center">
                   <div className="bg-brand-50/70 border border-brand-100/60 py-1.5 rounded-lg">
-                    <span className="text-xs font-bold text-[#202923] block">3 BHK</span>
-                    <span className="text-[10px] text-[#66716A]">Luxury Layout</span>
+                    <span className="text-xs font-bold text-[#202923] block">{spotlight.bhkDisplay || `${spotlight.bhk} BHK`}</span>
+                    <span className="text-[10px] text-[#66716A]">Configuration</span>
                   </div>
                   <div className="bg-brand-50/70 border border-brand-100/60 py-1.5 rounded-lg">
-                    <span className="text-xs font-bold text-[#202923] block">1,850 sq.ft</span>
+                    <span className="text-xs font-bold text-[#202923] block">{spotlight.superArea}</span>
                     <span className="text-[10px] text-[#66716A]">Super Area</span>
                   </div>
                   <div className="bg-brand-50/70 border border-brand-100/60 py-1.5 rounded-lg">
-                    <span className="text-xs font-bold text-brand-700 block">Ready</span>
-                    <span className="text-[10px] text-[#66716A]">To Move In</span>
+                    <span className="text-xs font-bold text-brand-700 block">{spotlight.possession.split('(')[0].trim()}</span>
+                    <span className="text-[10px] text-[#66716A]">Possession</span>
                   </div>
                 </div>
 
                 {/* Quick Trigger Button */}
                 <button
                   type="button"
-                  onClick={() => onSelectProperty && onSelectProperty('prop-1')}
+                  onClick={() => onSelectProperty && onSelectProperty(spotlight.id)}
                   className="w-full mt-3 bg-brand-700 hover:bg-brand-800 text-white text-xs sm:text-sm font-bold py-2.5 px-4 rounded-xl transition-colors flex items-center justify-center space-x-1.5"
                 >
-                  <span>Explore Supremus Grandeur</span>
+                  <span>Explore {spotlight.title}</span>
                   <ChevronRight className="w-4 h-4" />
                 </button>
               </div>

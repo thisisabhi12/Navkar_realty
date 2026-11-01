@@ -38,7 +38,7 @@ export default function FeaturedListings({
     return PROPERTIES_DATA.filter((prop) => {
       // Category filter
       if (selectedCategory !== 'all') {
-        if (selectedCategory === 'buy' && prop.category !== 'buy') return false;
+        if (selectedCategory === 'buy' && prop.category !== 'buy' && prop.category !== 'villa') return false;
         if (selectedCategory === 'rent' && prop.category !== 'rent') return false;
         if (selectedCategory === 'commercial' && prop.category !== 'commercial') return false;
         if (selectedCategory === 'villa' && prop.category !== 'villa') return false;
@@ -46,14 +46,19 @@ export default function FeaturedListings({
 
       // Locality filter
       if (selectedLocality !== 'All Locations') {
-        if (prop.location.toLowerCase() !== selectedLocality.toLowerCase()) return false;
+        const normSelected = selectedLocality.toLowerCase().replace(/[^a-z0-9]/g, '');
+        const normPropLoc = (prop.location || '').toLowerCase().replace(/[^a-z0-9]/g, '');
+        const normAddress = (prop.fullAddress || '').toLowerCase().replace(/[^a-z0-9]/g, '');
+        if (!normPropLoc.includes(normSelected) && !normSelected.includes(normPropLoc) && !normAddress.includes(normSelected)) {
+          return false;
+        }
       }
 
       // BHK filter
       if (selectedBhk !== 'all') {
-        if (selectedBhk === '2' && prop.bhk !== 2) return false;
-        if (selectedBhk === '3' && prop.bhk !== 3) return false;
-        if (selectedBhk === '4' && prop.bhk < 4) return false;
+        if (selectedBhk === '2' && !(prop.bhk === 2 || (prop.bhkOptions && prop.bhkOptions.includes(2)))) return false;
+        if (selectedBhk === '3' && !(prop.bhk === 3 || (prop.bhkOptions && prop.bhkOptions.includes(3)))) return false;
+        if (selectedBhk === '4' && !(prop.bhk >= 4 || (prop.bhkOptions && prop.bhkOptions.some(b => b >= 4)))) return false;
         if (selectedBhk === 'commercial' && prop.category !== 'commercial') return false;
       }
 
@@ -166,7 +171,7 @@ export default function FeaturedListings({
                   <option value="all">All Configurations</option>
                   <option value="2">2 BHK Apartments</option>
                   <option value="3">3 BHK Luxury Homes</option>
-                  <option value="4">4+ BHK Sky Villas</option>
+                  <option value="4">4 & 5 BHK Luxury Villas & Homes</option>
                   <option value="commercial">Commercial / Showrooms</option>
                 </select>
               </div>
@@ -301,7 +306,7 @@ export default function FeaturedListings({
                     {property.bhk > 0 ? (
                       <div className="flex items-center space-x-1.5">
                         <Bed className="w-4 h-4 text-brand-700 flex-shrink-0" />
-                        <span>{property.bhk} BHK</span>
+                        <span>{property.bhkDisplay || `${property.bhk} BHK`}</span>
                       </div>
                     ) : (
                       <div className="flex items-center space-x-1.5">
