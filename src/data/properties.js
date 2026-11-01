@@ -2,6 +2,7 @@ export const VADODARA_LOCALITIES = [
   "All Locations",
   "Vasna Road",
   "Diwalipura",
+  "Gotri - Ankodia",
   "Sayajipura",
   "Sama-Savli",
   "New Sama",
@@ -302,6 +303,58 @@ export const PROPERTIES_DATA = [
       "Vadodara Railway Station (7.0 km)"
     ],
     description: "Seven Sky Villa — Exclusive Living Beyond Ordinary in Chaani, Vadodara. Where luxury feels like home, featuring bespoke 4 BHK luxury villas starting from ₹2.55 Cr* with 2,500 sq.ft super built-up area, private garden, clubhouse, swimming pool, and gated security."
+  },
+  {
+    id: "prop-antica-greenwood",
+    title: "Antica Greenwood",
+    slug: "antica-greenwood-ankodia-gotri-vadodara",
+    type: "4 BHK Luxury Villa",
+    category: "villa",
+    badge: "Signature Estate",
+    price: 100000000,
+    priceDisplay: "₹ 10 Crore*",
+    location: "Gotri",
+    fullAddress: "Near Ankodia Canal Road, Off Gotri Sevasi Road, Vadodara - 391101",
+    bhk: 4,
+    bhkDisplay: "4 BHK Villa",
+    bathrooms: 5,
+    balconies: 4,
+    superArea: "5,800 sq.ft",
+    carpetArea: "4,450 sq.ft",
+    furnishing: "Bespoke Italian Marble & Luxury Designer Finishes",
+    facing: "East Facing (100% Vastu Compliant)",
+    floor: "Multi-Storey Private Luxury Mansion",
+    possession: "Ready for Exclusive Fit-outs",
+    reraId: "PR/GJ/VADODARA/VADODARA/RAA11928/2024",
+    mainImage: "/antica-greenwood.jpg",
+    gallery: [
+      "/antica-greenwood.jpg",
+      "/antica-greenwood-building.jpg",
+      "/antica-greenwood-living.jpg",
+      "/antica-greenwood-bedroom.jpg",
+      "/antica-greenwood-terrace.jpg"
+    ],
+    features: [
+      "Nature Meets Luxury — Where luxury lives in greenery",
+      "5,800 sq.ft expansive private estate villa in prime Ankodia, Gotri",
+      "Opulent double-height living areas with bespoke Italian marble",
+      "Private terrace lounge, landscaped pergola garden & multi-car portico"
+    ],
+    amenities: [
+      "Gated Community",
+      "Landscaped Gardens",
+      "Wide Internal Roads",
+      "24x7 Security",
+      "Ample Parking",
+      "Peaceful Surroundings"
+    ],
+    nearby: [
+      "Gotri Main Road (1.5 km)",
+      "Sevasi Heritage Stepwell (2.2 km)",
+      "Bhailal Amin Hospital (4.5 km)",
+      "Vadodara Railway Station (7.5 km)"
+    ],
+    description: "Antica Greenwood — Nature Meets Luxury in Ankodia, Gotri, Vadodara. Where luxury lives in greenery, offering monumental 4 BHK private estate villas starting from ₹10 Crore* with 5,800 sq.ft super built-up area, private landscaped gardens, pergola terrace deck, and 24x7 gated community security."
   },
   {
     id: "prop-prakruti-harmony",
