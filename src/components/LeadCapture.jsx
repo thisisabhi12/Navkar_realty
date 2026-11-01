@@ -10,9 +10,11 @@ import {
   MessageCircle,
   Building,
   Sparkles,
-  ArrowRight
+  ArrowRight,
+  AlertCircle
 } from 'lucide-react';
 import { VADODARA_LOCALITIES } from '../data/properties';
+import { submitInquiry } from '../services/api';
 
 export default function LeadCapture({ onOpenLegal }) {
   const [formData, setFormData] = useState({
@@ -27,15 +29,33 @@ export default function LeadCapture({ onOpenLegal }) {
 
   const [submitted, setSubmitted] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [errorMessage, setErrorMessage] = useState('');
+  const [honeypot, setHoneypot] = useState('');
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
+    setErrorMessage('');
     setIsSubmitting(true);
-    // Simulate swift server response
-    setTimeout(() => {
-      setIsSubmitting(false);
+
+    const result = await submitInquiry({
+      formType: 'Website Contact Us / Site Tour Inquiry',
+      fullName: formData.fullName,
+      phone: formData.phone,
+      email: formData.email,
+      preferredLocality: formData.preferredLocality,
+      propertyType: formData.propertyType,
+      needLoanAssistance: formData.needLoanAssistance,
+      message: formData.message,
+      website_hp: honeypot
+    });
+
+    setIsSubmitting(false);
+
+    if (result.success) {
       setSubmitted(true);
-    }, 800);
+    } else {
+      setErrorMessage(result.message || 'Unable to submit your inquiry right now. Please try again or message us on WhatsApp.');
+    }
   };
 
   return (
@@ -78,6 +98,7 @@ export default function LeadCapture({ onOpenLegal }) {
                     type="button"
                     onClick={() => {
                       setSubmitted(false);
+                      setErrorMessage('');
                       setFormData({
                         fullName: '',
                         phone: '',
@@ -233,6 +254,26 @@ export default function LeadCapture({ onOpenLegal }) {
                     I would like free Home Loan eligibility & interest rate assistance (SBI / HDFC / ICICI)
                   </label>
                 </div>
+
+                {/* Hidden Honeypot Field for Spam Protection */}
+                <div className="hidden" aria-hidden="true">
+                  <input
+                    type="text"
+                    name="website_hp"
+                    tabIndex={-1}
+                    autoComplete="off"
+                    value={honeypot}
+                    onChange={(e) => setHoneypot(e.target.value)}
+                  />
+                </div>
+
+                {/* Error Banner */}
+                {errorMessage && (
+                  <div className="p-3.5 bg-red-50 border border-red-200 text-red-800 text-xs rounded-xl flex items-start space-x-2 animate-in fade-in">
+                    <AlertCircle className="w-4 h-4 text-red-600 flex-shrink-0 mt-0.5" />
+                    <span>{errorMessage}</span>
+                  </div>
+                )}
 
                 {/* Submit CTA */}
                 <div className="pt-2">

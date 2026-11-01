@@ -313,7 +313,7 @@ export default function PropertyModal({ propertyId, onClose, onOpenConsultation 
             type="button"
             onClick={() => {
               onClose();
-              if (onOpenConsultation) onOpenConsultation();
+              if (onOpenConsultation) onOpenConsultation(property);
             }}
             className="flex-1 bg-[#176B3A] hover:bg-[#104D2A] text-white text-sm font-bold py-3 px-5 rounded-xl shadow-md transition-all flex items-center justify-center space-x-2"
           >

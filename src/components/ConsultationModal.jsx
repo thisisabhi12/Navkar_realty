@@ -8,12 +8,17 @@ import {
   CheckCircle2, 
   Sparkles, 
   ShieldCheck,
-  Send
+  Send,
+  AlertCircle
 } from 'lucide-react';
+import { submitInquiry } from '../services/api';
 
-export default function ConsultationModal({ isOpen, onClose }) {
+export default function ConsultationModal({ isOpen, onClose, initialContext }) {
   const dialogRef = useRef(null);
   const [submitted, setSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [errorMessage, setErrorMessage] = useState('');
+  const [honeypot, setHoneypot] = useState('');
   const [formData, setFormData] = useState({
     name: '',
     phone: '',
@@ -25,6 +30,14 @@ export default function ConsultationModal({ isOpen, onClose }) {
   });
 
   useEffect(() => {
+    if (isOpen && initialContext) {
+      if (initialContext.interest) {
+        setFormData(prev => ({ ...prev, interest: initialContext.interest }));
+      }
+    }
+  }, [isOpen, initialContext]);
+
+  useEffect(() => {
     const dialog = dialogRef.current;
     if (!dialog) return;
 
@@ -33,6 +46,7 @@ export default function ConsultationModal({ isOpen, onClose }) {
         dialog.showModal();
       }
       setSubmitted(false);
+      setErrorMessage('');
     } else {
       if (dialog.open) {
         dialog.close();
@@ -72,9 +86,34 @@ export default function ConsultationModal({ isOpen, onClose }) {
     };
   }, [isOpen, onClose]);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    setSubmitted(true);
+    setErrorMessage('');
+    setIsSubmitting(true);
+
+    const formType = initialContext?.formType || (initialContext?.property ? 'Site Visit Request' : 'VIP Consultation Booking');
+
+    const result = await submitInquiry({
+      formType,
+      fullName: formData.name,
+      phone: formData.phone,
+      email: formData.email,
+      date: formData.date,
+      timeSlot: formData.timeSlot,
+      meetingType: formData.meetingType,
+      interest: formData.interest,
+      property: initialContext?.property || null,
+      message: initialContext?.message || '',
+      website_hp: honeypot
+    });
+
+    setIsSubmitting(false);
+
+    if (result.success) {
+      setSubmitted(true);
+    } else {
+      setErrorMessage(result.message || 'Unable to confirm appointment right now. Please try again or reach us on WhatsApp.');
+    }
   };
 
   if (!isOpen) return null;
@@ -97,10 +136,10 @@ export default function ConsultationModal({ isOpen, onClose }) {
             </div>
             <div>
               <h3 id="consultation-dialog-title" className="text-base font-extrabold font-display">
-                Book VIP Property Consultation
+                {initialContext?.property ? 'Schedule Site Visit' : 'Book VIP Property Consultation'}
               </h3>
               <p className="text-[11px] text-[#DCEBDD] font-medium">
-                Navkar Realty • Backed by VS Group
+                {initialContext?.property ? `${initialContext.property.title} • ${initialContext.property.location}` : 'Navkar Realty • Backed by VS Group'}
               </p>
             </div>
           </div>
@@ -123,11 +162,16 @@ export default function ConsultationModal({ isOpen, onClose }) {
                 <CheckCircle2 className="w-7 h-7" />
               </div>
               <h4 className="text-xl font-bold text-[#202923] font-display">
-                Consultation Confirmed!
+                {initialContext?.property ? 'Site Visit Requested!' : 'Consultation Confirmed!'}
               </h4>
               <p className="text-xs text-[#66716A] leading-relaxed max-w-xs mx-auto">
-                Thank you, <strong>{formData.name}</strong>. A dedicated VS Group property advisor has reserved your slot on <strong>{formData.date || 'your chosen date'}</strong> ({formData.timeSlot}).
+                Thank you, <strong>{formData.name}</strong>. A dedicated VS Group property advisor has received your request for <strong>{formData.date || 'your chosen date'}</strong> ({formData.timeSlot}).
               </p>
+              {initialContext?.property && (
+                <div className="p-2.5 bg-[#DCEBDD]/50 border border-[#DCE5DD] rounded-xl text-center text-xs text-[#104D2A] font-bold">
+                  Property: {initialContext.property.title} ({initialContext.property.location})
+                </div>
+              )}
               <div className="p-3 bg-[#F0F6F0] border border-[#DCE5DD] rounded-xl text-left text-xs text-[#202923] space-y-1">
                 <p><strong>Venue:</strong> {formData.meetingType}</p>
                 <p><strong>Address:</strong> 207, Vihav Supremus 2, Vasna Road, Diwalipura, Vadodara</p>
@@ -144,6 +188,37 @@ export default function ConsultationModal({ isOpen, onClose }) {
           ) : (
             <form onSubmit={handleSubmit} className="space-y-4">
               
+              {/* Associated Property Banner if clicked from property modal */}
+              {initialContext?.property && (
+                <div className="p-3 bg-[#F0F6F0] border border-[#DCE5DD] rounded-xl flex items-center justify-between text-xs">
+                  <div>
+                    <span className="font-bold text-[#104D2A] block">{initialContext.property.title}</span>
+                    <span className="text-[#66716A]">{initialContext.property.type} &bull; {initialContext.property.location}</span>
+                  </div>
+                  <span className="font-black text-[#176B3A]">{initialContext.property.priceDisplay}</span>
+                </div>
+              )}
+
+              {/* Honeypot field for bot protection */}
+              <div className="hidden" aria-hidden="true">
+                <input
+                  type="text"
+                  name="website_hp"
+                  tabIndex={-1}
+                  autoComplete="off"
+                  value={honeypot}
+                  onChange={(e) => setHoneypot(e.target.value)}
+                />
+              </div>
+
+              {/* Error Notice */}
+              {errorMessage && (
+                <div className="p-3 bg-red-50 border border-red-200 text-red-800 text-xs rounded-xl flex items-start space-x-2 animate-in fade-in">
+                  <AlertCircle className="w-4 h-4 text-red-600 flex-shrink-0 mt-0.5" />
+                  <span>{errorMessage}</span>
+                </div>
+              )}
+
               <div className="space-y-1">
                 <label className="text-xs font-bold text-[#202923] block">
                   Your Name <span className="text-red-500">*</span>
@@ -175,6 +250,21 @@ export default function ConsultationModal({ isOpen, onClose }) {
 
                 <div className="space-y-1">
                   <label className="text-xs font-bold text-[#202923] block">
+                    Email Address <span className="text-[#66716A] text-[10px] font-normal">(Optional)</span>
+                  </label>
+                  <input
+                    type="email"
+                    placeholder="you@example.com"
+                    value={formData.email}
+                    onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                    className="w-full bg-[#F0F6F0]/60 border border-[#DCE5DD] rounded-xl px-3.5 py-2 text-xs sm:text-sm text-[#202923] focus:outline-none focus:ring-2 focus:ring-[#176B3A] focus:border-[#176B3A] focus:bg-white"
+                  />
+                </div>
+              </div>
+
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                <div className="space-y-1">
+                  <label className="text-xs font-bold text-[#202923] block">
                     Preferred Date <span className="text-red-500">*</span>
                   </label>
                   <input
@@ -185,21 +275,21 @@ export default function ConsultationModal({ isOpen, onClose }) {
                     className="w-full bg-[#F0F6F0]/60 border border-[#DCE5DD] rounded-xl px-3.5 py-2 text-xs sm:text-sm text-[#202923] focus:outline-none focus:ring-2 focus:ring-[#176B3A] focus:border-[#176B3A] focus:bg-white"
                   />
                 </div>
-              </div>
 
-              <div className="space-y-1">
-                <label className="text-xs font-bold text-[#202923] block">
-                  Preferred Time Window
-                </label>
-                <select
-                  value={formData.timeSlot}
-                  onChange={(e) => setFormData({ ...formData, timeSlot: e.target.value })}
-                  className="w-full bg-[#F0F6F0]/60 border border-[#DCE5DD] rounded-xl px-3.5 py-2 text-xs sm:text-sm text-[#202923] focus:outline-none focus:ring-2 focus:ring-[#176B3A] focus:border-[#176B3A] focus:bg-white cursor-pointer"
-                >
-                  <option value="Morning (10:30 AM - 1:00 PM)">Morning (10:30 AM - 1:00 PM)</option>
-                  <option value="Afternoon (2:00 PM - 5:00 PM)">Afternoon (2:00 PM - 5:00 PM)</option>
-                  <option value="Evening (5:00 PM - 7:30 PM)">Evening (5:00 PM - 7:30 PM)</option>
-                </select>
+                <div className="space-y-1">
+                  <label className="text-xs font-bold text-[#202923] block">
+                    Time Window
+                  </label>
+                  <select
+                    value={formData.timeSlot}
+                    onChange={(e) => setFormData({ ...formData, timeSlot: e.target.value })}
+                    className="w-full bg-[#F0F6F0]/60 border border-[#DCE5DD] rounded-xl px-3.5 py-2 text-xs sm:text-sm text-[#202923] focus:outline-none focus:ring-2 focus:ring-[#176B3A] focus:border-[#176B3A] focus:bg-white cursor-pointer"
+                  >
+                    <option value="Morning (10:30 AM - 1:00 PM)">Morning (10:30 AM - 1:00 PM)</option>
+                    <option value="Afternoon (2:00 PM - 5:00 PM)">Afternoon (2:00 PM - 5:00 PM)</option>
+                    <option value="Evening (5:00 PM - 7:30 PM)">Evening (5:00 PM - 7:30 PM)</option>
+                  </select>
+                </div>
               </div>
 
               <div className="space-y-1">
@@ -238,11 +328,21 @@ export default function ConsultationModal({ isOpen, onClose }) {
               <div className="pt-2">
                 <button
                   type="submit"
+                  disabled={isSubmitting}
                   id="confirm-booking-btn"
-                  className="w-full bg-[#176B3A] hover:bg-[#104D2A] text-white font-bold py-3 px-4 rounded-xl shadow-md transition-all flex items-center justify-center space-x-2 text-sm"
+                  className="w-full bg-[#176B3A] hover:bg-[#104D2A] text-white font-bold py-3 px-4 rounded-xl shadow-md transition-all flex items-center justify-center space-x-2 text-sm disabled:opacity-75"
                 >
-                  <Send className="w-4 h-4 text-[#DCEBDD]" />
-                  <span>Confirm Free Consultation Appointment</span>
+                  {isSubmitting ? (
+                    <span className="flex items-center space-x-2">
+                      <span className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin" />
+                      <span>Sending Request...</span>
+                    </span>
+                  ) : (
+                    <>
+                      <Send className="w-4 h-4 text-[#DCEBDD]" />
+                      <span>{initialContext?.property ? 'Confirm Site Visit Request' : 'Confirm Free Consultation Appointment'}</span>
+                    </>
+                  )}
                 </button>
               </div>
 

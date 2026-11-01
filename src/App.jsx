@@ -17,6 +17,7 @@ export default function App() {
   const [searchFilters, setSearchFilters] = useState(null);
   const [selectedPropertyId, setSelectedPropertyId] = useState(null);
   const [isConsultationOpen, setIsConsultationOpen] = useState(false);
+  const [consultationContext, setConsultationContext] = useState(null);
   const [legalModal, setLegalModal] = useState({ isOpen: false, tab: 'privacy' });
 
   // Ensure any legacy theme storage is cleaned and unified Lacoste theme is applied
@@ -38,12 +39,27 @@ export default function App() {
     setSelectedPropertyId(null);
   };
 
-  const handleOpenConsultation = () => {
+  const handleOpenConsultation = (context = null) => {
+    if (context && context.title) {
+      setConsultationContext({
+        property: context,
+        formType: 'Site Visit Request',
+        interest: `${context.title} (${context.location})`
+      });
+    } else if (context) {
+      setConsultationContext(context);
+    } else {
+      setConsultationContext({
+        formType: 'VIP Property Consultation',
+        interest: 'General Portfolio Advisory'
+      });
+    }
     setIsConsultationOpen(true);
   };
 
   const handleCloseConsultation = () => {
     setIsConsultationOpen(false);
+    setConsultationContext(null);
   };
 
   const handleOpenLegal = (tab = 'privacy') => {
@@ -110,6 +126,7 @@ export default function App() {
       <ConsultationModal
         isOpen={isConsultationOpen}
         onClose={handleCloseConsultation}
+        initialContext={consultationContext}
       />
 
       {/* 12. Legal Documentation Modal (Privacy Policy & Terms of Service) */}

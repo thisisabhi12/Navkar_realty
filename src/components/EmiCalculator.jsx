@@ -216,7 +216,11 @@ export default function EmiCalculator({ onOpenConsultation }) {
             {/* Assistance Button */}
             <button
               type="button"
-              onClick={onOpenConsultation}
+              onClick={() => onOpenConsultation && onOpenConsultation({
+                formType: 'Home Loan Assistance',
+                interest: 'Home Loan Pre-Approval Advisory',
+                message: `Client requested Home Loan Assistance. Property Value: ${formatINR(propertyPrice)}, Estimated Loan: ${formatINR(loanAmount)}, Monthly EMI: ${formatINR(monthlyEmi)}/mo (${loanTenure} Years @ ${interestRate}% p.a.)`
+              })}
               className="w-full bg-white hover:bg-brand-50 text-brand-950 font-extrabold py-3 px-4 rounded-xl shadow-md transition-all flex items-center justify-center space-x-2 text-xs sm:text-sm group"
             >
               <Sparkles className="w-4 h-4 text-brand-700" />
