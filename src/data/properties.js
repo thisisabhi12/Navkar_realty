@@ -46,33 +46,37 @@ export const PROPERTIES_DATA = [
     bhkDisplay: "4 BHK",
     bathrooms: 4,
     balconies: 3,
-    superArea: "2,450 sq.ft",
-    carpetArea: "1,820 sq.ft",
+    superArea: "3,202 sq.ft",
+    carpetArea: "2,400 sq.ft",
     furnishing: "Designer Bare Shell / Custom Finished",
     facing: "East Facing (100% Vastu Compliant)",
     floor: "High Rise Tower",
     possession: "Under Construction (Possession 2026)",
     reraId: "PR/GJ/VADODARA/VADODARA/RAA11842/2024",
-    mainImage: "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=1200&q=80",
+    mainImage: "/seven-vierra.jpg",
     gallery: [
-      "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1600566753376-12c8ab7fb75b?auto=format&fit=crop&w=1200&q=80"
+      "/seven-vierra.jpg",
+      "/seven-vierra-building.jpg",
+      "/seven-vierra-pool.jpg",
+      "/seven-vierra-living.jpg",
+      "/seven-vierra-gym.jpg"
     ],
     features: [
-      "Expansive 4 BHK layouts with separate servant room",
-      "Double-height private balcony decks",
-      "High-speed Mitsubishi elevators with access control",
-      "Covered basement parking & EV charging stations"
+      "Spacious 4 BHK homes with modern architecture & luxury lifestyle",
+      "3,202 sq.ft super built-up area in prime Vasna Road, Diwalipura",
+      "A higher standard of living with double-height illuminated balconies",
+      "Covered parking, EV charging, and high-speed elevators"
     ],
     amenities: [
-      "Modern Clubhouse",
-      "Rooftop Swimming Pool",
-      "Fitness Centre & Gym",
-      "Podium Garden",
+      "Swimming Pool",
+      "Gymnasium",
+      "Clubhouse",
+      "Multipurpose Hall",
       "Children's Play Area",
-      "24x7 Security & CCTV"
+      "Landscaped Garden",
+      "Allotted Car Parking",
+      "24x7 Security",
+      "Modern Lifts"
     ],
     nearby: [
       "Diwalipura Court (900m)",
@@ -80,7 +84,7 @@ export const PROPERTIES_DATA = [
       "Old Padra Road (2.5 km)",
       "Railway Station (5.5 km)"
     ],
-    description: "Seven Vierra redefines luxury apartment living at the premier intersection of Vasna Road and Diwalipura. Offering generous 4 BHK configurations with magnificent open views, world-class amenities, and supreme connectivity."
+    description: "Seven Vierra — Luxury Living Redefined in Vadodara. A place where luxury meets a brighter tomorrow, offering grand 4 BHK premium apartments starting from ₹1 Cr* with 3,202 sq.ft super built-up area, swimming pool, gymnasium, clubhouse, and world-class society amenities."
   },
   {
     id: "prop-seven-sattva",
