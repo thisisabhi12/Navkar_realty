@@ -305,7 +305,7 @@ export const PROPERTIES_DATA = [
     slug: "prakruti-harmony-bil-kalali-vadodara",
     type: "4 BHK Tenements",
     category: "villa",
-    badge: "Family Tenements",
+    badge: "Nature & Luxury",
     price: 9000000,
     priceDisplay: "₹ 90 Lakhs*",
     location: "Bil - Kalali",
@@ -314,32 +314,35 @@ export const PROPERTIES_DATA = [
     bhkDisplay: "4 BHK",
     bathrooms: 4,
     balconies: 2,
-    superArea: "2,250 sq.ft (Plot: 175 sq.yd)",
-    carpetArea: "1,720 sq.ft",
+    superArea: "1,985 sq.ft",
+    carpetArea: "1,520 sq.ft",
     furnishing: "Semi-Furnished with Modular Kitchen",
     facing: "East Facing",
     floor: "Ground + 1 Storey Independent Tenement",
     possession: "Ready to Move",
     reraId: "PR/GJ/VADODARA/PADRA/RAA08119/2023",
-    mainImage: "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=1200&q=80",
+    mainImage: "/prakruti-harmony.jpg",
     gallery: [
-      "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1600566753376-12c8ab7fb75b?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1613490493576-7fde63acd811?auto=format&fit=crop&w=1200&q=80"
+      "/prakruti-harmony.jpg",
+      "/prakruti-harmony-building.jpg",
+      "/prakruti-harmony-living.jpg",
+      "/prakruti-harmony-bedroom.jpg",
+      "/prakruti-harmony-terrace.jpg"
     ],
     features: [
-      "Spacious 4 BHK independent tenement home",
-      "Private front parking and cozy backyard garden",
-      "Excellent cross-ventilation in serene, peaceful surroundings",
-      "Immediate possession with clear legal title"
+      "Nature, Family, Luxury in Perfect Harmony — A home that grows with you",
+      "1,985 sq.ft super built-up area in greener Bil-Kalali neighborhood",
+      "Spacious living areas with dedicated private terrace spaces",
+      "Wide internal roads with 24x7 security and ample parking"
     ],
     amenities: [
-      "Gated Society with Guard",
-      "Children's Play Park",
-      "Internal Concrete Roads",
-      "Street Lighting & Underground Cabling",
-      "Community Gathering Hall"
+      "Clubhouse",
+      "Landscaped Garden",
+      "Children's Play Area",
+      "Wide Internal Roads",
+      "24x7 Security",
+      "Ample Parking",
+      "Green Environment"
     ],
     nearby: [
       "Delhi Public School (DPS) Kalali (1.2 km)",
@@ -347,7 +350,7 @@ export const PROPERTIES_DATA = [
       "Vasna Road D-Mart (3.8 km)",
       "Bhailal Amin Hospital (5.0 km)"
     ],
-    description: "Prakruti Harmony offers peaceful 4 BHK tenements in the rapidly developing Bil-Kalali corridor. Ideal for families desiring independent ground-plus-one home living near top educational institutions."
+    description: "Prakruti Harmony — Nature • Family • Luxury in Perfect Harmony at Bil, Kalali, Vadodara. A home that grows with you, featuring 4 BHK tenements starting from ₹90 Lakhs* with 1,985 sq.ft super built-up area, private terrace spaces, clubhouse, landscaped garden, and serene green surroundings."
   },
   {
     id: "prop-seven-sky",

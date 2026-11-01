@@ -130,7 +130,7 @@ export default function PropertyModal({ propertyId, onClose, onOpenConsultation 
                 src={property.gallery[selectedImageIndex] || property.mainImage}
                 alt={`${property.title} view ${selectedImageIndex + 1}`}
                 className={`w-full h-full transition-all duration-300 ${
-                  (property.gallery[selectedImageIndex] || property.mainImage).match(/seven-(imperia|symphony|sattva|sky|sky-villa)\.jpg/)
+                  (property.gallery[selectedImageIndex] || property.mainImage).match(/(seven-(imperia|symphony|sattva|sky|sky-villa)|prakruti-harmony)\.jpg/)
                     ? 'object-contain'
                     : 'object-cover'
                 }`}
