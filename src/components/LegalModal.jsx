@@ -438,7 +438,7 @@ export default function LegalModal({ isOpen, initialTab = 'privacy', onClose }) 
             © {new Date().getFullYear()} NAVKAR REALTY (A Part of VS Group). ALL RIGHTS RESERVED.
           </p>
           <p className="text-[11px] text-[#66716A]">
-            Registered & Operating under Gujarat Real Estate Regulatory Authority (GujRERA) and Indian Jurisdiction.
+            Operating under applicable Indian Laws and Gujarat Jurisdiction.
           </p>
         </div>
       </div>

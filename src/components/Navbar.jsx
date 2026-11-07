@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Building2, Phone, Menu, X, ShieldCheck, ArrowRight, Sparkles, Calendar } from 'lucide-react';
+import { Building2, Phone, Menu, X, ArrowRight, Sparkles, Calendar } from 'lucide-react';
 
 export default function Navbar({ onOpenConsultation }) {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -31,12 +31,7 @@ export default function Navbar({ onOpenConsultation }) {
       {/* Top micro-bar */}
       <div className="bg-[var(--theme-navbar-top-bg)] text-white/90 text-xs py-2 px-4 border-b border-[var(--theme-navbar-top-border)] hidden md:block transition-colors duration-300">
         <div className="max-w-7xl mx-auto flex justify-between items-center">
-          <div className="flex items-center space-x-6">
-            <span className="flex items-center text-[var(--theme-navbar-accent)] font-medium">
-              <ShieldCheck className="w-3.5 h-3.5 mr-1.5 text-[var(--theme-navbar-accent)]" />
-              Gujarat RERA Registered Real Estate Broker
-            </span>
-            <span className="text-white/60">•</span>
+          <div className="flex items-center">
             <span className="text-white/80">
               Vadodara Hub: Vasna Road & Diwalipura
             </span>
@@ -149,8 +144,8 @@ export default function Navbar({ onOpenConsultation }) {
           <div className="lg:hidden bg-white border-b border-[#DCE5DD] px-4 pt-3 pb-6 space-y-3 shadow-xl transition-all">
             <div className="py-2 px-3 bg-brand-50 rounded-lg border border-brand-200 flex items-center justify-between text-xs font-medium text-brand-900">
               <span className="flex items-center">
-                <ShieldCheck className="w-4 h-4 mr-1.5 text-brand-700" />
-                RERA Registered & VS Group Backed
+                <Sparkles className="w-4 h-4 mr-1.5 text-brand-700" />
+                A Proud Part of VS Group
               </span>
               <a href="tel:+919173946161" className="text-brand-700 font-bold underline">
                 Call Us

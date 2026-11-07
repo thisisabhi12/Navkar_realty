@@ -41,3 +41,4 @@ app.listen(PORT, () => {
   console.log(`[Navkar Realty Production Server] Listening on http://localhost:${PORT}`);
   console.log(`[Email Service] Recipient: ${process.env.NOTIFICATION_RECIPIENT || 'realtynavkar61@gmail.com'}`);
 });
+

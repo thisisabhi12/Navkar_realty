@@ -4,7 +4,6 @@ import {
   MapPin, 
   Phone, 
   Mail, 
-  ShieldCheck, 
   ArrowUp, 
   Sparkles,
   Facebook,
@@ -49,19 +48,7 @@ export default function Footer({ onOpenConsultation, onOpenLegal }) {
             </p>
           </div>
 
-          <div className="md:col-span-6 flex flex-col sm:flex-row md:justify-end items-start sm:items-center gap-4">
-            <div className="bg-[#104D2A]/60 border border-[#176B3A]/40 rounded-2xl p-4 flex items-center space-x-3">
-              <ShieldCheck className="w-8 h-8 text-[#DCEBDD] flex-shrink-0" />
-              <div>
-                <p className="text-xs font-bold text-white uppercase tracking-wider">
-                  GujRERA Registered Broker
-                </p>
-                <p className="text-xs font-mono text-[#DCEBDD]">
-                  Reg No: PR/GJ/VADODARA/VADODARA/RAA09876/040324
-                </p>
-              </div>
-            </div>
-
+          <div className="md:col-span-6 flex justify-end items-center">
             <button
               type="button"
               onClick={scrollToTop}
@@ -236,10 +223,10 @@ export default function Footer({ onOpenConsultation, onOpenLegal }) {
 
         </div>
 
-        {/* Bottom Disclaimer & GujRERA Notice */}
+        {/* Bottom Disclaimer */}
         <div className="pt-8 mt-4 border-t border-white/10 text-[11px] text-slate-400 space-y-3">
           <p className="leading-relaxed">
-            <strong>Disclaimer:</strong> Navkar Realty is an accredited real estate broking firm under the VS Group operating in compliance with the Gujarat Real Estate Regulatory Authority (GujRERA). Project particulars, floor layouts, artist impressions, and pricing displayed are for advisory guidance and subject to physical verification and official developer agreements.
+            <strong>Disclaimer:</strong> Navkar Realty is a premier real estate consultancy firm under the VS Group. Project particulars, floor layouts, artist impressions, and pricing displayed are for advisory guidance and subject to physical verification and official developer agreements.
           </p>
           <div className="flex flex-col sm:flex-row justify-between items-center text-slate-400 gap-2">
             <p>
