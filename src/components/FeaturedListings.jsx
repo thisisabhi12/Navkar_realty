@@ -92,7 +92,7 @@ export default function FeaturedListings({
             Featured Properties in Vadodara
           </h2>
           <p className="text-base text-[#66716A] font-normal">
-            Handpicked premium residences, sky villas, and prime commercial corridors with complete RERA compliance and clear titles, managed by Navkar Realty under the VS Group umbrella.
+            Handpicked premium residences, sky villas, and prime commercial corridors with verified documentation and clear titles, managed by Navkar Realty under the VS Group umbrella.
           </p>
         </div>
 
@@ -205,7 +205,7 @@ export default function FeaturedListings({
             </span>
             <span className="text-brand-800 font-semibold flex items-center">
               <ShieldCheck className="w-3.5 h-3.5 mr-1 text-brand-700" />
-              100% Title Verified & GujRERA Listed
+              100% Title Verified & Clear Legal Documentation
             </span>
           </div>
 

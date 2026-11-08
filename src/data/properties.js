@@ -54,7 +54,6 @@ export const PROPERTIES_DATA = [
     facing: "East Facing (100% Vastu Compliant)",
     floor: "High Rise Tower",
     possession: "Under Construction (Possession 2026)",
-    reraId: "PR/GJ/VADODARA/VADODARA/RAA11842/2024",
     mainImage: "/seven-vierra.jpg",
     gallery: [
       "/seven-vierra.jpg",
@@ -109,7 +108,6 @@ export const PROPERTIES_DATA = [
     facing: "East / North-East Facing",
     floor: "Ground + 2 Storey Independent Villa",
     possession: "Ready / Nearing Possession",
-    reraId: "PR/GJ/VADODARA/VADODARA/RAA09871/2023",
     mainImage: "/seven-sattva.jpg",
     gallery: [
       "/seven-sattva.jpg",
@@ -163,7 +161,6 @@ export const PROPERTIES_DATA = [
     facing: "North-East Facing",
     floor: "Mid to High Floors Available",
     possession: "Ready for Possession",
-    reraId: "PR/GJ/VADODARA/VADODARA/RAA08453/2023",
     mainImage: "/seven-imperia.jpg",
     gallery: [
       "/seven-imperia.jpg",
@@ -218,7 +215,6 @@ export const PROPERTIES_DATA = [
     facing: "East Facing",
     floor: "7-Storey Residential Complex",
     possession: "Ready to Move",
-    reraId: "PR/GJ/VADODARA/VADODARA/RAA09120/2023",
     mainImage: "/seven-symphony.jpg",
     gallery: [
       "/seven-symphony.jpg",
@@ -272,7 +268,6 @@ export const PROPERTIES_DATA = [
     facing: "North-East Facing (Vastu Compliant)",
     floor: "Private Multi-Storey Sky Villa",
     possession: "Ready to Move / Exclusive Possession",
-    reraId: "PR/GJ/VADODARA/VADODARA/RAA10543/2024",
     mainImage: "/seven-sky-villa.jpg",
     gallery: [
       "/seven-sky-villa.jpg",
@@ -326,7 +321,6 @@ export const PROPERTIES_DATA = [
     facing: "East Facing (100% Vastu Compliant)",
     floor: "Multi-Storey Private Luxury Mansion",
     possession: "Ready for Exclusive Fit-outs",
-    reraId: "PR/GJ/VADODARA/VADODARA/RAA11928/2024",
     mainImage: "/antica-greenwood.jpg",
     gallery: [
       "/antica-greenwood.jpg",
@@ -378,7 +372,6 @@ export const PROPERTIES_DATA = [
     facing: "East Facing",
     floor: "Ground + 1 Storey Independent Tenement",
     possession: "Ready to Move",
-    reraId: "PR/GJ/VADODARA/PADRA/RAA08119/2023",
     mainImage: "/prakruti-harmony.jpg",
     gallery: [
       "/prakruti-harmony.jpg",
@@ -431,7 +424,6 @@ export const PROPERTIES_DATA = [
     facing: "East Facing",
     floor: "High-Rise Tower",
     possession: "Ready for Fit-outs / Nearing Possession",
-    reraId: "PR/GJ/VADODARA/VADODARA/RAA09532/2024",
     mainImage: "/seven-sky.jpg",
     gallery: [
       "/seven-sky.jpg",
@@ -482,7 +474,6 @@ export const PROPERTIES_DATA = [
     facing: "1,470 sq. yards | Main Road Touch Prime Frontage",
     floor: "Ground + 4 Expansive Open Floors",
     possession: "Nearing Possession (95% Completed / Fit-out Stage)",
-    reraId: "PR/GJ/VADODARA/VADODARA/RAA11005/2024",
     mainImage: "/premium-commercial-space.jpg",
     gallery: [
       "/premium-commercial-space.jpg"

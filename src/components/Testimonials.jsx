@@ -92,9 +92,11 @@ export default function Testimonials() {
                     <h4 className="text-base font-extrabold text-[#202923] font-display">
                       {current.name}
                     </h4>
-                    <p className="text-xs text-[#176B3A] font-semibold">
-                      {current.role}
-                    </p>
+                    {current.role && (
+                      <p className="text-xs text-[#176B3A] font-semibold">
+                        {current.role}
+                      </p>
+                    )}
                   </div>
                   <div className="inline-block bg-white border border-[#DCE5DD] px-3 py-1 rounded-full text-xs font-bold text-[#202923]">
                     📍 {current.location}

@@ -254,7 +254,7 @@ export default function Footer({ onOpenConsultation, onOpenLegal }) {
                 onClick={() => onOpenLegal && onOpenLegal('terms')}
                 className="hover:text-white transition-colors underline-offset-4 hover:underline"
               >
-                RERA Compliance
+                Legal Compliance
               </button>
             </p>
           </div>

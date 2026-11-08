@@ -16,7 +16,7 @@ export default function AboutSection({ onOpenConsultation }) {
   const trustPillars = [
     {
       icon: ShieldCheck,
-      title: "GujRERA Compliant & Legal Due Diligence",
+      title: "Legal Due Diligence & Title Verification",
       desc: "Every listing is rigorously vetted for clear legal titles, approved building plans, and environmental clearances. Zero disputes, 100% peace of mind."
     },
     {

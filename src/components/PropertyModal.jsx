@@ -202,7 +202,7 @@ export default function PropertyModal({ propertyId, onClose, onOpenConsultation 
                 {property.priceDisplay}
               </span>
               <span className="text-xs font-medium text-[#104D2A] block mt-0.5">
-                GujRERA Approved & Clear Title
+                100% Title Verified & Clear Documentation
               </span>
             </div>
           </div>
@@ -306,14 +306,6 @@ export default function PropertyModal({ propertyId, onClose, onOpenConsultation 
             </div>
           </div>
 
-          {/* RERA Compliance Badge */}
-          <div className="p-3 bg-[#DCEBDD]/50 border border-[#DCE5DD] rounded-xl flex items-center space-x-3 text-xs text-[#104D2A]">
-            <ShieldCheck className="w-5 h-5 text-[#176B3A] flex-shrink-0" />
-            <div>
-              <p className="font-bold">Gujarat RERA Registered Property</p>
-              <p className="text-[11px] font-mono text-[#176B3A]">Registration No: {property.reraId}</p>
-            </div>
-          </div>
 
         </div>
 

@@ -78,7 +78,7 @@ export default function Hero({ onSearchSubmit, onSelectProperty }) {
             <div className="grid grid-cols-3 gap-3 pt-1 border-t border-[#DCE5DD] max-w-xl">
               <div className="flex items-center space-x-2">
                 <CheckCircle2 className="w-5 h-5 text-brand-700 flex-shrink-0" />
-                <span className="text-xs sm:text-sm font-medium text-[#202923]">100% RERA Verified</span>
+                <span className="text-xs sm:text-sm font-medium text-[#202923]">100% Title Verified</span>
               </div>
               <div className="flex items-center space-x-2">
                 <CheckCircle2 className="w-5 h-5 text-brand-700 flex-shrink-0" />

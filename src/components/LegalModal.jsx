@@ -134,7 +134,7 @@ export default function LegalModal({ isOpen, initialTab = 'privacy', onClose }) 
                 Navkar Realty Legal Portal
               </h2>
               <span className="text-[10px] font-bold bg-[#176B3A] text-[#DCEBDD] px-2 py-0.5 rounded-full uppercase tracking-wider hidden sm:inline-block">
-                GujRERA & IT Act
+                Legal & IT Act
               </span>
             </div>
             <p className="text-xs text-slate-300">
