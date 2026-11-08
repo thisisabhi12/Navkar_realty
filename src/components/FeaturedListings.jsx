@@ -9,9 +9,10 @@ import {
   RotateCcw, 
   ShieldCheck, 
   Check, 
-  ExternalLink,
-  Sparkles,
-  PhoneCall
+  ExternalLink, 
+  Sparkles, 
+  PhoneCall,
+  Building
 } from 'lucide-react';
 import { PROPERTIES_DATA, VADODARA_LOCALITIES } from '../data/properties';
 
@@ -310,19 +311,26 @@ export default function FeaturedListings({
                       </div>
                     ) : (
                       <div className="flex items-center space-x-1.5">
-                        <Maximize className="w-4 h-4 text-brand-700 flex-shrink-0" />
+                        <Building className="w-4 h-4 text-brand-700 flex-shrink-0" />
                         <span>Commercial</span>
                       </div>
                     )}
 
-                    <div className="flex items-center space-x-1.5">
-                      <Bath className="w-4 h-4 text-brand-700 flex-shrink-0" />
-                      <span>{property.bathrooms} Baths</span>
-                    </div>
+                    {property.bhk > 0 ? (
+                      <div className="flex items-center space-x-1.5">
+                        <Bath className="w-4 h-4 text-brand-700 flex-shrink-0" />
+                        <span>{property.bathrooms} Baths</span>
+                      </div>
+                    ) : (
+                      <div className="flex items-center space-x-1.5">
+                        <Sparkles className="w-4 h-4 text-brand-700 flex-shrink-0" />
+                        <span>360° View</span>
+                      </div>
+                    )}
 
                     <div className="flex items-center space-x-1.5">
                       <Maximize className="w-4 h-4 text-brand-700 flex-shrink-0" />
-                      <span className="truncate">{property.superArea}</span>
+                      <span className="truncate">{property.bhk > 0 ? property.superArea : 'Full Tower'}</span>
                     </div>
                   </div>
 

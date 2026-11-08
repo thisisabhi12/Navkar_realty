@@ -130,7 +130,7 @@ export default function PropertyModal({ propertyId, onClose, onOpenConsultation 
                 src={property.gallery[selectedImageIndex] || property.mainImage}
                 alt={`${property.title} view ${selectedImageIndex + 1}`}
                 className={`w-full h-full transition-all duration-300 ${
-                  (property.gallery[selectedImageIndex] || property.mainImage).match(/(seven-(imperia|symphony|sattva|sky|sky-villa|vierra)|prakruti-harmony|antica-greenwood)\.jpg/)
+                  (property.gallery[selectedImageIndex] || property.mainImage).match(/(seven-(imperia|symphony|sattva|sky|sky-villa|vierra)|prakruti-harmony|antica-greenwood|premium-commercial-space)\.jpg/)
                     ? 'object-contain'
                     : 'object-cover'
                 }`}
@@ -208,8 +208,12 @@ export default function PropertyModal({ propertyId, onClose, onOpenConsultation 
             <div className="bg-white p-3.5 rounded-xl border border-[#DCE5DD]">
               <span className="text-[11px] font-bold text-[#66716A] uppercase tracking-wider block">Configuration</span>
               <p className="text-sm font-extrabold text-[#202923] mt-0.5 flex items-center">
-                <Bed className="w-4 h-4 mr-1.5 text-[#176B3A]" />
-                {property.bhk > 0 ? (property.bhkDisplay || `${property.bhk} BHK`) : 'Commercial'}
+                {property.bhk > 0 ? (
+                  <Bed className="w-4 h-4 mr-1.5 text-[#176B3A]" />
+                ) : (
+                  <Building className="w-4 h-4 mr-1.5 text-[#176B3A]" />
+                )}
+                {property.bhk > 0 ? (property.bhkDisplay || `${property.bhk} BHK`) : 'Commercial Space'}
               </p>
             </div>
 

@@ -466,41 +466,49 @@ export const PROPERTIES_DATA = [
     slug: "premium-commercial-space-vadodara",
     type: "Commercial Space",
     category: "commercial",
-    badge: "Prime Commercial",
-    price: 7500000,
-    priceDisplay: "Price on Request",
+    badge: "Landmark Commercial",
+    price: 800000000,
+    priceDisplay: "₹ 80 Crore*",
     location: "Vasna Road",
     fullAddress: "High-Visibility Commercial Corridor, Vasna Road, Diwalipura, Vadodara - 390007",
     bhk: 0,
     bhkDisplay: "Commercial",
-    bathrooms: 1,
+    bathrooms: 8,
     balconies: 0,
-    superArea: "850 - 2,400 sq.ft",
-    carpetArea: "610 - 1,720 sq.ft",
+    superArea: "Commercial Floors & Retail Showrooms",
+    carpetArea: "Custom Modular Floorplates",
     furnishing: "Bare Shell with High Ceilings & Full Glass Facade",
-    facing: "Main Arterial Road Facing",
-    floor: "Ground Showrooms & 1st/2nd Floor Offices",
+    facing: "Main Arterial Road Facing (360° Open View)",
+    floor: "Multi-Storey Landmark Commercial Tower",
     possession: "Ready for Fit-outs",
     reraId: "PR/GJ/VADODARA/VADODARA/RAA11005/2024",
-    mainImage: "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1200&q=80",
+    mainImage: "/premium-commercial-space.jpg",
     gallery: [
-      "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1497215728101-856f4ea42174?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1577495508048-b635879837f1?auto=format&fit=crop&w=1200&q=80"
+      "/premium-commercial-space.jpg",
+      "/premium-commercial-building.jpg",
+      "/premium-commercial-entrance.jpg",
+      "/premium-commercial-360.jpg",
+      "/premium-commercial-front.jpg",
+      "/premium-commercial-left.jpg",
+      "/premium-commercial-right.jpg",
+      "/premium-commercial-back.jpg"
     ],
     features: [
-      "Wide frontage with maximum brand visibility from main road",
-      "Double-height entrance lobby & high-speed passenger elevators",
-      "100% DG power backup for continuous business operations",
-      "Ideal for retail showrooms, corporate offices, clinics & cafes"
+      "For a Brighter Business Tomorrow — Landmark commercial modern architecture",
+      "Prime commercial area with easy accessibility and high investment potential",
+      "360° panoramic view available with high-performance glass facade & designer lattice",
+      "Ample parking space with multi-vehicle visitor parking & 24x7 security",
+      "Suitable for multiple businesses: corporate offices, retail showrooms, banks & institutions"
     ],
     amenities: [
-      "Grand Commercial Atrium",
-      "Valet Visitor Parking",
-      "24x7 Security & CCTV Monitoring",
-      "Fire Hydrant & Smoke Detection Systems",
-      "EV Charging Stations"
+      "Prime Location",
+      "Modern Architecture",
+      "Ample Parking Space",
+      "Lift Facility",
+      "360° View Available",
+      "24x7 Security",
+      "Easy Accessibility",
+      "High Investment Potential"
     ],
     nearby: [
       "Ward 11 Civic Centre (Adjacent)",
@@ -508,6 +516,6 @@ export const PROPERTIES_DATA = [
       "Diwalipura Old Court (1.0 km)",
       "Old Padra Road (1.5 km)"
     ],
-    description: "Premium commercial showroom and corporate office spaces located on Vadodara's prime commercial arterial road. High footfall, excellent visibility, and state-of-the-art infrastructure designed to elevate your business presence."
+    description: "Premium Commercial Space — For a Brighter Business Tomorrow in Vadodara. A landmark commercial development offered at ₹80 Crore* situated in a prime commercial area with easy accessibility, modern architecture, ample parking space, high-speed lift facilities, 360° views, and 24x7 security. Suitable for multiple businesses including corporate headquarters and flagship retail showrooms."
   }
 ];
