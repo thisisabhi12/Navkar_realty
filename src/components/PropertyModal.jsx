@@ -217,7 +217,7 @@ export default function PropertyModal({ propertyId, onClose, onOpenConsultation 
                 ) : (
                   <Building className="w-4 h-4 mr-1.5 text-[#176B3A]" />
                 )}
-                {property.bhk > 0 ? (property.bhkDisplay || `${property.bhk} BHK`) : 'Commercial Space'}
+                {property.bhk > 0 ? (property.bhkDisplay || `${property.bhk} BHK`) : (property.bhkDisplay || property.type || 'Commercial Space')}
               </p>
             </div>
 
@@ -230,10 +230,12 @@ export default function PropertyModal({ propertyId, onClose, onOpenConsultation 
             </div>
 
             <div className="bg-white p-3.5 rounded-xl border border-[#DCE5DD]">
-              <span className="text-[11px] font-bold text-[#66716A] uppercase tracking-wider block">Vastu & Facing</span>
+              <span className="text-[11px] font-bold text-[#66716A] uppercase tracking-wider block">
+                {property.bhk > 0 ? 'Vastu & Facing' : 'Plot Area & Facing'}
+              </span>
               <p className="text-sm font-extrabold text-[#202923] mt-0.5 flex items-center">
                 <Compass className="w-4 h-4 mr-1.5 text-[#176B3A]" />
-                {property.facing.split('(')[0]}
+                {property.facing ? (property.bhk > 0 ? property.facing.split('(')[0] : property.facing) : 'Prime Facing'}
               </p>
             </div>
 
@@ -249,7 +251,7 @@ export default function PropertyModal({ propertyId, onClose, onOpenConsultation 
           {/* Overview Description */}
           <div>
             <h4 className="text-sm font-bold uppercase tracking-wider text-[#66716A] mb-2">
-              Property Overview & VS Group Guarantee
+              Property Overview & Navkar Realty Guarantee
             </h4>
             <p className="text-sm text-[#202923] leading-relaxed">
               {property.description}
@@ -274,7 +276,7 @@ export default function PropertyModal({ propertyId, onClose, onOpenConsultation 
           {/* Full Amenities */}
           <div>
             <h4 className="text-sm font-bold uppercase tracking-wider text-[#66716A] mb-3">
-              Society Amenities
+              {property.category === 'commercial' ? 'Commercial Project Amenities' : 'Society Amenities'}
             </h4>
             <div className="flex flex-wrap gap-2">
               {property.amenities.map((amenity, idx) => (

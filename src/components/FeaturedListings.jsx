@@ -260,7 +260,10 @@ export default function FeaturedListings({
                     <span className="bg-brand-800/90 backdrop-blur-md text-white text-[11px] font-bold px-2.5 py-1 rounded-md shadow-sm">
                       {property.badge}
                     </span>
-                    <span className="bg-white/95 backdrop-blur-md text-[#202923] text-[11px] font-bold px-2.5 py-1 rounded-md shadow-sm">
+                    <span 
+                      className="bg-white/95 backdrop-blur-md text-[#202923] text-[11px] font-bold px-2.5 py-1 rounded-md shadow-sm max-w-[170px] truncate"
+                      title={property.possession}
+                    >
                       {property.possession}
                     </span>
                   </div>
@@ -312,7 +315,7 @@ export default function FeaturedListings({
                     ) : (
                       <div className="flex items-center space-x-1.5">
                         <Building className="w-4 h-4 text-brand-700 flex-shrink-0" />
-                        <span>Commercial</span>
+                        <span className="truncate">{property.bhkDisplay || 'Commercial'}</span>
                       </div>
                     )}
 
@@ -330,7 +333,7 @@ export default function FeaturedListings({
 
                     <div className="flex items-center space-x-1.5">
                       <Maximize className="w-4 h-4 text-brand-700 flex-shrink-0" />
-                      <span className="truncate">{property.bhk > 0 ? property.superArea : 'Full Tower'}</span>
+                      <span className="truncate">{property.superArea}</span>
                     </div>
                   </div>
 

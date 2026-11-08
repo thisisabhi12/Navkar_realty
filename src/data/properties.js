@@ -20,7 +20,8 @@ export const PROPERTY_TYPES = [
   "4 BHK Luxury Villa",
   "5 BHK Luxury Villas",
   "4 BHK Tenements",
-  "Commercial Space"
+  "Commercial Space",
+  "Standalone Commercial Building (G+4)"
 ];
 
 export const BUDGET_RANGES = [
@@ -463,52 +464,50 @@ export const PROPERTIES_DATA = [
   {
     id: "prop-premium-commercial",
     title: "Premium Commercial Space",
-    slug: "premium-commercial-space-vadodara",
-    type: "Commercial Space",
+    slug: "amar-icon-premium-commercial-space-chhani-vadodara",
+    type: "Standalone Commercial Building (G+4)",
     category: "commercial",
-    badge: "Landmark Commercial",
+    badge: "Valued at ₹109 Cr*",
     price: 800000000,
     priceDisplay: "₹ 80 Crore*",
-    location: "Vasna Road",
-    fullAddress: "High-Visibility Commercial Corridor, Vasna Road, Diwalipura, Vadodara - 390007",
+    location: "Chhani",
+    fullAddress: "Near Chhani Jakatnaka Junction, Main Road Touch Prime Frontage, Chhani, Vadodara - 391740",
     bhk: 0,
-    bhkDisplay: "Commercial",
-    bathrooms: 8,
+    bhkDisplay: "Standalone (G+4)",
+    bathrooms: 10,
     balconies: 0,
-    superArea: "Commercial Floors & Retail Showrooms",
-    carpetArea: "Custom Modular Floorplates",
-    furnishing: "Bare Shell with High Ceilings & Full Glass Facade",
-    facing: "Main Arterial Road Facing (360° Open View)",
-    floor: "Multi-Storey Landmark Commercial Tower",
-    possession: "Ready for Fit-outs",
+    superArea: "50,638 sq.ft",
+    carpetArea: "1,470 sq. yards plot area",
+    furnishing: "95% Completed Civil Structure (Ready for Fit-outs)",
+    facing: "1,470 sq. yards | Main Road Touch Prime Frontage",
+    floor: "Ground + 4 Expansive Open Floors",
+    possession: "Nearing Possession (95% Completed / Fit-out Stage)",
     reraId: "PR/GJ/VADODARA/VADODARA/RAA11005/2024",
     mainImage: "/premium-commercial-space.jpg",
     gallery: [
       "/premium-commercial-space.jpg"
     ],
     features: [
-      "For a Brighter Business Tomorrow — Landmark commercial modern architecture",
-      "Prime commercial area with easy accessibility and high investment potential",
-      "360° panoramic view available with high-performance glass facade & designer lattice",
-      "Ample parking space with multi-vehicle visitor parking & 24x7 security",
-      "Suitable for multiple businesses: corporate offices, retail showrooms, banks & institutions"
+      "High-visibility main-road frontage designed for maximum commercial footfall",
+      "Massive 50,638 sq.ft built-up area across Ground + 4 expansive open floors",
+      "Well-structured 1,470 sq.yard clear title commercial plot",
+      "95% civil and structural work executed by a reputed developer, ready for final custom fit-outs"
     ],
     amenities: [
-      "Prime Location",
-      "Modern Architecture",
-      "Ample Parking Space",
-      "Lift Facility",
-      "360° View Available",
-      "24x7 Security",
-      "Easy Accessibility",
-      "High Investment Potential"
+      "Dedicated Ground & Basement Parking Space",
+      "High-Speed Commercial Elevators",
+      "Wide Road Entrance & Dedicated Loading Bays",
+      "24x7 Security & CCTV Surveillance Infrastructure",
+      "Power Backup Provisions",
+      "Modern Firefighting System Infrastructure"
     ],
     nearby: [
-      "Ward 11 Civic Centre (Adjacent)",
-      "HDFC & Axis Bank Branches (150m)",
-      "Diwalipura Old Court (1.0 km)",
-      "Old Padra Road (1.5 km)"
+      "Chhani Jakatnaka Junction (100 m)",
+      "Chhani Lakefront (1.2 km)",
+      "Dumad Toll Plaza / NH-48 Highway (2.8 km)",
+      "Fatehgunj Commercial Hub (4.0 km)",
+      "Vadodara Railway Station (5.5 km)"
     ],
-    description: "Premium Commercial Space — For a Brighter Business Tomorrow in Vadodara. A landmark commercial development offered at ₹80 Crore* situated in a prime commercial area with easy accessibility, modern architecture, ample parking space, high-speed lift facilities, 360° views, and 24x7 security. Suitable for multiple businesses including corporate headquarters and flagship retail showrooms."
+    description: "Amar Icon — A prime commercial landmark opportunity in Chhani, Vadodara. Featuring an entire Ground + 4 floor commercial structure with 50,638 sq.ft super built-up area on a 1,470 sq.yard plot. Valued at ₹109 Crores and offered at an attractive price of ₹80 Crores on an \"as-is\" condition basis with certified valuation documentation, ideal for corporate headquarters, institutional traders, healthcare facilities, or retail hubs."
   }
 ];
