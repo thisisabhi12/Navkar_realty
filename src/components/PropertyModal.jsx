@@ -151,28 +151,32 @@ export default function PropertyModal({ propertyId, onClose, onOpenConsultation 
                 </a>
               </div>
 
-              <div className="absolute bottom-3 right-3 bg-black/60 backdrop-blur-sm text-white text-xs px-3 py-1 rounded-full">
-                Image {selectedImageIndex + 1} of {property.gallery.length}
-              </div>
+              {property.gallery && property.gallery.length > 1 && (
+                <div className="absolute bottom-3 right-3 bg-black/60 backdrop-blur-sm text-white text-xs px-3 py-1 rounded-full">
+                  Image {selectedImageIndex + 1} of {property.gallery.length}
+                </div>
+              )}
             </div>
 
-            {/* Thumbnail Strip */}
-            <div className="grid grid-cols-4 gap-2">
-              {property.gallery.map((img, idx) => (
-                <button
-                  key={idx}
-                  type="button"
-                  onClick={() => setSelectedImageIndex(idx)}
-                  className={`aspect-[16/10] rounded-xl overflow-hidden border-2 transition-all ${
-                    selectedImageIndex === idx 
-                      ? 'border-[#176B3A] scale-95 shadow-md' 
-                      : 'border-transparent opacity-70 hover:opacity-100'
-                  }`}
-                >
-                  <img src={img} alt={`Thumbnail ${idx + 1}`} className="w-full h-full object-cover" />
-                </button>
-              ))}
-            </div>
+            {/* Thumbnail Strip - only rendered when there are multiple photos */}
+            {property.gallery && property.gallery.length > 1 && (
+              <div className="grid grid-cols-4 gap-2">
+                {property.gallery.map((img, idx) => (
+                  <button
+                    key={idx}
+                    type="button"
+                    onClick={() => setSelectedImageIndex(idx)}
+                    className={`aspect-[16/10] rounded-xl overflow-hidden border-2 transition-all ${
+                      selectedImageIndex === idx 
+                        ? 'border-[#176B3A] scale-95 shadow-md' 
+                        : 'border-transparent opacity-70 hover:opacity-100'
+                    }`}
+                  >
+                    <img src={img} alt={`Thumbnail ${idx + 1}`} className="w-full h-full object-cover" />
+                  </button>
+                ))}
+              </div>
+            )}
           </div>
 
           {/* Core Info & Price Banner */}

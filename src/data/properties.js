@@ -484,14 +484,7 @@ export const PROPERTIES_DATA = [
     reraId: "PR/GJ/VADODARA/VADODARA/RAA11005/2024",
     mainImage: "/premium-commercial-space.jpg",
     gallery: [
-      "/premium-commercial-space.jpg",
-      "/premium-commercial-building.jpg",
-      "/premium-commercial-entrance.jpg",
-      "/premium-commercial-360.jpg",
-      "/premium-commercial-front.jpg",
-      "/premium-commercial-left.jpg",
-      "/premium-commercial-right.jpg",
-      "/premium-commercial-back.jpg"
+      "/premium-commercial-space.jpg"
     ],
     features: [
       "For a Brighter Business Tomorrow — Landmark commercial modern architecture",
