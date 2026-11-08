@@ -90,7 +90,7 @@ export default function App() {
           onOpenConsultation={handleOpenConsultation}
         />
 
-        {/* 4. About Us / VS Group Trust Indicators */}
+        {/* 4. About Us / Navkar Realty Trust Indicators */}
         <AboutSection onOpenConsultation={handleOpenConsultation} />
 
         {/* 5. Market Stats & Vadodara Locality Pulse */}

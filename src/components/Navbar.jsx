@@ -20,7 +20,7 @@ export default function Navbar({ onOpenConsultation }) {
   const navLinks = [
     { name: 'Home', href: '#home' },
     { name: 'Listings', href: '#listings' },
-    { name: 'About VS Group', href: '#about' },
+    { name: 'About Us', href: '#about' },
     { name: 'EMI Calculator', href: '#calculator' },
     { name: 'Testimonials', href: '#testimonials' },
     { name: 'Contact', href: '#contact' },
@@ -47,7 +47,7 @@ export default function Navbar({ onOpenConsultation }) {
             <span className="text-white/40">|</span>
             <span className="text-[var(--theme-navbar-accent)] flex items-center font-semibold tracking-wide">
               <Sparkles className="w-3.5 h-3.5 mr-1 text-[var(--theme-navbar-accent)]" />
-              A Proud Part of VS Group
+              The Name of Trust
             </span>
           </div>
         </div>
@@ -70,17 +70,13 @@ export default function Navbar({ onOpenConsultation }) {
               <div className="h-12 sm:h-14 py-0.5 flex items-center">
                 <img 
                   src="/logo.jpg" 
-                  alt="Navkar Realty - The Name of Trust (Part of VS Group)" 
+                  alt="Navkar Realty - The Name of Trust" 
                   className="h-full w-auto object-contain rounded-md group-hover:scale-105 transition-transform" 
                 />
               </div>
               <div className="flex flex-col justify-center border-l border-[#DCE5DD] pl-3">
-                <span className="text-xs sm:text-sm font-extrabold tracking-tight text-[#202923] font-display">
+                <span className="text-sm sm:text-base font-extrabold tracking-tight text-[#202923] font-display">
                   NAVKAR <span className="text-brand-700">REALTY</span>
-                </span>
-                <span className="text-[10px] sm:text-[11px] font-bold tracking-wider uppercase text-brand-800 flex items-center">
-                  <span className="w-1.5 h-1.5 rounded-full bg-brand-700 mr-1.5"></span>
-                  Part of VS Group
                 </span>
               </div>
             </a>
@@ -145,7 +141,7 @@ export default function Navbar({ onOpenConsultation }) {
             <div className="py-2 px-3 bg-brand-50 rounded-lg border border-brand-200 flex items-center justify-between text-xs font-medium text-brand-900">
               <span className="flex items-center">
                 <Sparkles className="w-4 h-4 mr-1.5 text-brand-700" />
-                A Proud Part of VS Group
+                The Name of Trust
               </span>
               <a href="tel:+919173946161" className="text-brand-700 font-bold underline">
                 Call Us

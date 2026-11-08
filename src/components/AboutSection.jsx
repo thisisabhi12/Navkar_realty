@@ -43,12 +43,12 @@ export default function AboutSection({ onOpenConsultation }) {
         {/* Main Grid: Story + Visual Card */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
           
-          {/* Left Column: Visual Showcase of VS Group / Vadodara Office */}
+          {/* Left Column: Visual Showcase of Vadodara Office */}
           <div className="lg:col-span-5 relative order-2 lg:order-1">
             <div className="relative rounded-3xl overflow-hidden shadow-2xl border-4 border-white bg-slate-900 group">
               <img
                 src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1000&q=80"
-                alt="Navkar Realty and VS Group Headquarters Vadodara"
+                alt="Navkar Realty Corporate Headquarters Vadodara"
                 className="w-full h-[460px] object-cover opacity-90 group-hover:scale-105 transition-transform duration-700"
                 loading="lazy"
               />
@@ -57,12 +57,12 @@ export default function AboutSection({ onOpenConsultation }) {
 
               {/* Floating Badge */}
               <div className="absolute top-5 left-5 bg-white/95 backdrop-blur-md rounded-2xl p-3.5 shadow-lg flex items-center space-x-3 border border-[#DCE5DD]">
-                <div className="w-10 h-10 rounded-xl bg-brand-700 flex items-center justify-center text-white font-bold">
-                  VS
+                <div className="w-10 h-10 rounded-xl bg-brand-700 flex items-center justify-center text-white font-bold shadow-sm">
+                  <ShieldCheck className="w-5 h-5 text-white" />
                 </div>
                 <div>
-                  <h4 className="text-xs font-bold text-[#202923] uppercase">VS Group Entity</h4>
-                  <p className="text-[11px] text-brand-800 font-semibold">15+ Years Trust in Gujarat</p>
+                  <h4 className="text-xs font-bold text-[#202923] uppercase tracking-wide">NAVKAR REALTY</h4>
+                  <p className="text-[11px] text-brand-800 font-semibold">Trusted Real Estate Advisory in Vadodara</p>
                 </div>
               </div>
 
@@ -96,34 +96,63 @@ export default function AboutSection({ onOpenConsultation }) {
             
             <div className="inline-flex items-center space-x-2 bg-brand-50 border border-brand-200 rounded-full px-4 py-1 text-xs font-bold text-brand-800">
               <Award className="w-3.5 h-3.5 text-brand-700" />
-              <span>The Trust of VS Group</span>
+              <span>The Navkar Realty Commitment</span>
             </div>
 
             <h2 className="text-3xl sm:text-4xl font-extrabold text-[#202923] tracking-tight leading-tight font-display">
-              Unrivaled Real Estate Excellence, Powered by <span className="text-brand-700">VS Group's</span> 15-Year Legacy
+              Ground-Level Expertise, <span className="text-brand-700">Uncompromising Integrity</span>
             </h2>
 
             <p className="text-base text-[#66716A] leading-relaxed">
-              <strong>Navkar Realty</strong> was founded with a singular ambition: to elevate real estate advisory in Vadodara into a benchmark of transparency, sophistication, and unyielding integrity. Operating under the esteemed aegis of the <strong>VS Group</strong>, we blend regional influence with hyperlocal neighborhood wisdom.
+              Navkar Realty was founded with a singular focus: to bring clarity, genuine guidance, and total transparency to real estate decisions across Vadodara. In a market crowded with transactional noise, we operate as dedicated client advocates—pairing deep hyperlocal knowledge with a structured, client-first advisory approach.
             </p>
 
             <p className="text-base text-[#66716A] leading-relaxed">
-              Whether you are an ambitious professional seeking a Vastu-aligned luxury apartment on Vasna Road, an NRI investing in a high-appreciation villa in Bhayli, or a corporation leasing strategic showroom space in Diwalipura, our team acts as your fiduciary partner at every stage.
+              Whether you are looking for a thoughtfully designed residential home in Chhani or Bhayli, an NRI client seeking clear-title land investments with steady long-term appreciation, or a business owner securing strategic commercial space in Vadodara’s core growth corridors, we guide you with objective counsel and complete due diligence through every milestone.
             </p>
 
-            {/* Quick Metrics */}
-            <div className="grid grid-cols-3 gap-4 pt-4 border-t border-[#DCE5DD]">
-              <div>
-                <span className="text-2xl sm:text-3xl font-black text-brand-700 block font-display">15+</span>
-                <span className="text-xs text-[#66716A] font-medium">Years VS Group Standing</span>
+            {/* 3 Pillar Highlight Cards */}
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-4 border-t border-[#DCE5DD]">
+              <div className="bg-white p-3.5 rounded-xl border border-[#DCE5DD] shadow-sm hover:border-brand-300 transition-all flex flex-col justify-between">
+                <div>
+                  <div className="w-8 h-8 rounded-lg bg-brand-50 text-brand-700 flex items-center justify-center mb-2.5">
+                    <ShieldCheck className="w-4 h-4" />
+                  </div>
+                  <h4 className="text-xs sm:text-sm font-bold text-[#202923] font-display">
+                    End-to-End Due Diligence
+                  </h4>
+                  <p className="text-[11px] sm:text-xs text-[#66716A] mt-1 leading-snug">
+                    Thorough legal scrutiny, title verification, and transparent paperwork.
+                  </p>
+                </div>
               </div>
-              <div>
-                <span className="text-2xl sm:text-3xl font-black text-brand-700 block font-display">₹450+ Cr</span>
-                <span className="text-xs text-[#66716A] font-medium">Vadodara Property Handled</span>
+
+              <div className="bg-white p-3.5 rounded-xl border border-[#DCE5DD] shadow-sm hover:border-brand-300 transition-all flex flex-col justify-between">
+                <div>
+                  <div className="w-8 h-8 rounded-lg bg-brand-50 text-brand-700 flex items-center justify-center mb-2.5">
+                    <MapPin className="w-4 h-4" />
+                  </div>
+                  <h4 className="text-xs sm:text-sm font-bold text-[#202923] font-display">
+                    Hyperlocal Market Insight
+                  </h4>
+                  <p className="text-[11px] sm:text-xs text-[#66716A] mt-1 leading-snug">
+                    Deep on-ground knowledge across Vadodara's prime residential and commercial hubs.
+                  </p>
+                </div>
               </div>
-              <div>
-                <span className="text-2xl sm:text-3xl font-black text-brand-700 block font-display">1,200+</span>
-                <span className="text-xs text-[#66716A] font-medium">Satisfied Families</span>
+
+              <div className="bg-white p-3.5 rounded-xl border border-[#DCE5DD] shadow-sm hover:border-brand-300 transition-all flex flex-col justify-between">
+                <div>
+                  <div className="w-8 h-8 rounded-lg bg-brand-50 text-brand-700 flex items-center justify-center mb-2.5">
+                    <Handshake className="w-4 h-4" />
+                  </div>
+                  <h4 className="text-xs sm:text-sm font-bold text-[#202923] font-display">
+                    Client-Centric Advisory
+                  </h4>
+                  <p className="text-[11px] sm:text-xs text-[#66716A] mt-1 leading-snug">
+                    Unbiased property recommendations tailored entirely to your budget and long-term goals.
+                  </p>
+                </div>
               </div>
             </div>
 
@@ -134,7 +163,7 @@ export default function AboutSection({ onOpenConsultation }) {
                 onClick={onOpenConsultation}
                 className="inline-flex items-center space-x-2 bg-brand-700 hover:bg-brand-800 text-white text-sm font-bold px-6 py-3.5 rounded-xl shadow-md shadow-brand-700/25 transition-all group"
               >
-                <span>Speak with a VS Group Property Specialist</span>
+                <span>Speak with a Navkar Realty Property Specialist</span>
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </button>
             </div>
@@ -174,7 +203,7 @@ export default function AboutSection({ onOpenConsultation }) {
                     </p>
                   </div>
                   <div className="mt-4 pt-3 border-t border-[#DCE5DD] flex items-center text-xs font-bold text-brand-700">
-                    <span>Guaranteed by VS Group</span>
+                    <span>The Navkar Realty Standard</span>
                   </div>
                 </div>
               );
