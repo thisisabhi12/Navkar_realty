@@ -7,8 +7,7 @@ import {
   ArrowUp, 
   Sparkles,
   Facebook,
-  Instagram,
-  Linkedin
+  Instagram
 } from 'lucide-react';
 
 export default function Footer({ onOpenConsultation, onOpenLegal }) {
@@ -150,7 +149,7 @@ export default function Footer({ onOpenConsultation, onOpenLegal }) {
             </ul>
           </div>
 
-          {/* Col 4: VS Group Assurance & Social */}
+          {/* Col 4: Navkar Realty Connect & Social */}
           <div className="space-y-4">
             <h4 className="text-sm font-extrabold uppercase tracking-wider text-[#DCEBDD] font-display">
               Connect With Us
@@ -178,15 +177,6 @@ export default function Footer({ onOpenConsultation, onOpenLegal }) {
                 aria-label="Instagram"
               >
                 <Instagram className="w-4 h-4" />
-              </a>
-              <a 
-                href="https://linkedin.com" 
-                target="_blank" 
-                rel="noopener noreferrer" 
-                className="w-9 h-9 rounded-lg bg-[#104D2A]/60 border border-[#176B3A]/40 text-slate-300 hover:text-white hover:bg-[#176B3A] flex items-center justify-center transition-all"
-                aria-label="LinkedIn"
-              >
-                <Linkedin className="w-4 h-4" />
               </a>
             </div>
 
