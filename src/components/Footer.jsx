@@ -8,9 +8,7 @@ import {
   Sparkles,
   Facebook,
   Instagram,
-  Linkedin,
-  Youtube,
-  Twitter
+  Linkedin
 } from 'lucide-react';
 
 export default function Footer({ onOpenConsultation, onOpenLegal }) {
@@ -39,7 +37,7 @@ export default function Footer({ onOpenConsultation, onOpenLegal }) {
                   NAVKAR <span className="text-[#DCEBDD] font-extrabold">REALTY</span>
                 </span>
                 <span className="text-xs font-semibold text-[#DCEBDD] tracking-wider uppercase block mt-0.5">
-                  A Part of VS Group • The Name of Trust
+                  The Name of Trust • Vadodara
                 </span>
               </div>
             </div>
@@ -72,7 +70,7 @@ export default function Footer({ onOpenConsultation, onOpenLegal }) {
             
             <div className="space-y-3 text-xs text-slate-200">
               <p className="font-bold text-white text-sm">
-                Navkar Realty (A Part of VS Group)
+                Navkar Realty
               </p>
               
               <div className="flex items-start space-x-2.5">
@@ -111,7 +109,7 @@ export default function Footer({ onOpenConsultation, onOpenLegal }) {
                 <a href="#listings" className="hover:text-white transition-colors">Featured Vadodara Listings</a>
               </li>
               <li>
-                <a href="#about" className="hover:text-white transition-colors">About VS Group Legacy</a>
+                <a href="#about" className="hover:text-white transition-colors">About Us</a>
               </li>
               <li>
                 <a href="#calculator" className="hover:text-white transition-colors">Home Loan EMI Calculator</a>
@@ -190,24 +188,6 @@ export default function Footer({ onOpenConsultation, onOpenLegal }) {
               >
                 <Linkedin className="w-4 h-4" />
               </a>
-              <a 
-                href="https://youtube.com" 
-                target="_blank" 
-                rel="noopener noreferrer" 
-                className="w-9 h-9 rounded-lg bg-[#104D2A]/60 border border-[#176B3A]/40 text-slate-300 hover:text-white hover:bg-[#176B3A] flex items-center justify-center transition-all"
-                aria-label="YouTube"
-              >
-                <Youtube className="w-4 h-4" />
-              </a>
-              <a 
-                href="https://twitter.com" 
-                target="_blank" 
-                rel="noopener noreferrer" 
-                className="w-9 h-9 rounded-lg bg-[#104D2A]/60 border border-[#176B3A]/40 text-slate-300 hover:text-white hover:bg-[#176B3A] flex items-center justify-center transition-all"
-                aria-label="Twitter / X"
-              >
-                <Twitter className="w-4 h-4" />
-              </a>
             </div>
 
             <div className="pt-2">
@@ -226,11 +206,11 @@ export default function Footer({ onOpenConsultation, onOpenLegal }) {
         {/* Bottom Disclaimer */}
         <div className="pt-8 mt-4 border-t border-white/10 text-[11px] text-slate-400 space-y-3">
           <p className="leading-relaxed">
-            <strong>Disclaimer:</strong> Navkar Realty is a premier real estate consultancy firm under the VS Group. Project particulars, floor layouts, artist impressions, and pricing displayed are for advisory guidance and subject to physical verification and official developer agreements.
+            <strong>Disclaimer:</strong> Navkar Realty is a premier real estate consultancy firm in Vadodara. Project particulars, floor layouts, artist impressions, and pricing displayed are for advisory guidance and subject to physical verification and official developer agreements.
           </p>
           <div className="flex flex-col sm:flex-row justify-between items-center text-slate-400 gap-2">
             <p>
-              © {new Date().getFullYear()} Navkar Realty (A Part of VS Group). All Rights Reserved.
+              © {new Date().getFullYear()} Navkar Realty. All Rights Reserved.
             </p>
             <p className="flex items-center space-x-4">
               <button 
