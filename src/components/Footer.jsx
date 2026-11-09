@@ -161,11 +161,11 @@ export default function Footer({ onOpenConsultation, onOpenLegal }) {
             {/* Social Icons */}
             <div className="flex items-center space-x-3 pt-1">
               <a 
-                href="https://facebook.com" 
+                href="https://www.facebook.com/p/Navkar-Realty-61595126739279/" 
                 target="_blank" 
                 rel="noopener noreferrer" 
                 className="w-9 h-9 rounded-lg bg-[#104D2A]/60 border border-[#176B3A]/40 text-slate-300 hover:text-white hover:bg-[#176B3A] flex items-center justify-center transition-all"
-                aria-label="Facebook"
+                aria-label="Follow Navkar Realty on Facebook"
               >
                 <Facebook className="w-4 h-4" />
               </a>
