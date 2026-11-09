@@ -170,11 +170,11 @@ export default function Footer({ onOpenConsultation, onOpenLegal }) {
                 <Facebook className="w-4 h-4" />
               </a>
               <a 
-                href="https://instagram.com" 
+                href="https://www.instagram.com/navkar._.realty?srtk=YjByaW5ucDY3ajJi" 
                 target="_blank" 
                 rel="noopener noreferrer" 
                 className="w-9 h-9 rounded-lg bg-[#104D2A]/60 border border-[#176B3A]/40 text-slate-300 hover:text-white hover:bg-[#176B3A] flex items-center justify-center transition-all"
-                aria-label="Instagram"
+                aria-label="Follow Navkar Realty on Instagram"
               >
                 <Instagram className="w-4 h-4" />
               </a>
